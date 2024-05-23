@@ -1,0 +1,44 @@
+<div nz-row>
+  <h1 nz-col nzSpan="12" nz-typography>Transactions</h1>
+</div>
+<div nz-row>
+  <form nz-col nz-form [nzLayout]="'inline'">
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="date">Date</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input nz-input name="date" type="email" id="date" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="type">Type</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input nz-input name="type" type="email" id="type" />
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</div>
+yehayeha
+
+<nz-divider></nz-divider>
+<div nz-row>
+  <div nz-col nzSpan="12">
+    <nz-table #txTable [nzData]="txData">
+      <thead>
+        <th>Date</th>
+        <th>Type</th>
+        <th>Category</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of txTable.data">
+          <td>{{data.createdAt | date: 'dd/MM/yyyy'}}</td>
+          <td>{{data.type}}</td>
+          <td>{{assetCategoriesMap[data.assetCategoryId].full_path}}</td>
+          <td>{{data.quantity}}</td>
+          <td>{{data.totalPrice}}€</td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</div>
