@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@import "@ali-hm/angular-tree-component/css/angular-tree-component.css";
+
+.assetClassManagement span.toggle-children {
+  filter: invert(100%);
+}
+
+html {
+  background-image: url("assets/logo_xl.png"); /* Set the background image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center center; /* Center the image horizontally and vertically */
+  background-size: auto;
+  height: 100%;
+}
+
+img.navbar-logo {
+  max-height: 64px;
+}
+
+.table tr > th {
+  color: yellow;
+}

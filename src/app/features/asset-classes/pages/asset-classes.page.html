@@ -1,1 +1,18 @@
-Asset classes
+<div class="box">
+  <h1 class="title">Asset class management</h1>
+  <div class="assetClassManagement">
+    <tree-root #tree [nodes]="nodes">
+      <ng-template #treeNodeTemplate let-node let-index="index">
+        <div class="tree-node-content">
+          <div>
+            <span>{{node.data.name}}</span>
+          </div>
+          <div>
+            <button class="tree-button">DELETE</button>
+            <button class="tree-button">+ CHILD</button>
+          </div>
+        </div>
+      </ng-template>
+    </tree-root>
+  </div>
+</div>

@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Transaction } from '../models/transaction-model';
+import { AssetCategory, Transaction } from '../models/transaction-model';
 import { CommonModule } from '@angular/common';
 import { AssetCategoryService } from '../services/category-service';
 
-import { ASSET_CATEGORIES, TRANSACTIONS } from '../mocks/mocked-data';
 import { TransactionService } from '../services/transaction-service';
+import {
+  ASSET_CATEGORIES,
+  TRANSACTIONS,
+} from '../../../shared/mocks/mocked-data';
 
 @Component({
   selector: 'gr-transactions-page',
@@ -32,8 +35,12 @@ export class TransactionsPage implements OnInit {
   ngOnInit() {}
 
   private mockData() {
-    ASSET_CATEGORIES.forEach((cat) => this.assetCatService.addCategory(cat));
-    TRANSACTIONS.forEach((tx) => this.txService.addTransaction(tx));
+    ASSET_CATEGORIES.forEach((cat: AssetCategory) =>
+      this.assetCatService.addCategory(cat)
+    );
+    TRANSACTIONS.forEach((tx: Transaction) =>
+      this.txService.addTransaction(tx)
+    );
     this.txData = this.txService.getTransactions();
   }
 }

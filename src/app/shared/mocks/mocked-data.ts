@@ -1,4 +1,7 @@
-import { Transaction, TransactionType } from '../models/transaction-model';
+import {
+  Transaction,
+  TransactionType,
+} from '../../features/transactions/models/transaction-model';
 
 export const TRANSACTIONS: Transaction[] = [
   {
@@ -151,5 +154,121 @@ export const ASSET_CATEGORIES = [
     description: 'Pokemon TCG',
     icon: '',
     parent: 1,
+  },
+  {
+    id: 15,
+    name: 'Crypto',
+    description: 'Crypto assets',
+    icon: '',
+  },
+  {
+    id: 16,
+    name: 'Banks',
+    description: 'Bank accounts',
+    icon: '',
+  },
+  {
+    id: 17,
+    name: 'Binance',
+    description: 'Binance Exchange',
+    icon: '',
+    parent: 15,
+  },
+  {
+    id: 18,
+    name: 'BBVA savings',
+    description: 'BBVA savings account',
+    icon: '',
+    parent: 16,
+  },
+  {
+    id: 19,
+    name: 'ING checking Carles',
+    description: 'ING checking account Carles',
+    icon: '',
+    parent: 16,
+  },
+  {
+    id: 20,
+    name: 'ING checking Cristina',
+    description: 'ING checking account Cristina',
+    icon: '',
+    parent: 16,
+  },
+  {
+    id: 21,
+    name: 'ING savings Carles',
+    description: 'ING savings account Carles',
+    icon: '',
+    parent: 16,
+  },
+  {
+    id: 22,
+    name: 'ING savings Cristina',
+    description: 'ING savings account Cristina',
+    icon: '',
+    parent: 16,
+  },
+  {
+    id: 23,
+    name: 'N26 savings Cristina',
+    description: 'N26 savings account Cristina',
+    icon: '',
+    parent: 16,
+  },
+  {
+    id: 24,
+    name: 'N26 savings Carles',
+    description: 'N26 savings account Carles',
+    icon: '',
+    parent: 16,
+  },
+  {
+    id: 25,
+    name: 'N26 crypto',
+    description: 'N26 crypto wallet',
+    icon: '',
+    parent: 15,
+  },
+  {
+    id: 26,
+    name: 'Stocks',
+    description: 'Stocks',
+    icon: '',
+  },
+  {
+    id: 27,
+    name: 'Degiro',
+    description: 'Degiro broker',
+    icon: '',
+    parent: 26,
+  },
+  {
+    id: 28,
+    name: 'ING',
+    description: 'ING Broker',
+    icon: '',
+    parent: 26,
+  },
+  {
+    id: 29,
+    name: 'BBVA checking',
+    description: 'BBVA checking account',
+    icon: '',
+    parent: 16,
+  },
+  {
+    id: 30,
+    name: 'OP03 Booster Box',
+    description: 'OP03 Booster Box ',
+    icon: '',
+    parent: 2,
+  },
+  {
+    id: 31,
+    name: 'OP04 Booster Box',
+    description: 'OP04 Booster Box',
+    icon: '',
+    parent: 2,
   },
 ];
