@@ -10,7 +10,6 @@ export class TransactionService {
   }
   addTransaction(tx: Transaction) {
     tx.unitPrice = tx.totalPrice / tx.quantity;
-    console.log(tx);
     this.txs.push(tx);
   }
   getTransactionById(txId: number) {
