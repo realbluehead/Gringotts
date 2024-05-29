@@ -1,49 +1,17 @@
-<nz-layout class="app-layout">
-  <nz-sider class="menu-sidebar"
-    nzCollapsible
-    nzWidth="256px"
-    nzBreakpoint="md"
-    [(nzCollapsed)]="isCollapsed"
-    [nzTrigger]="null">
-    <div class="sidebar-logo">
-      <a href="https://ng.ant.design/" target="_blank">
-        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
-        <h1>Gringotts</h1>
-      </a>
-    </div>
-    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-      <li nz-submenu nzOpen nzTitle="Vault" nzIcon="dashboard">
-        <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/transactions">Transactions</a>
-          </li>
-         
-        </ul>
-      </li>
-      <li nz-submenu nzOpen nzTitle="Config" nzIcon="setting">
-        <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a>Asset classes</a>
-          </li>
-        </ul>
-      </li>
+<nav class="navbar">
+  <div class="container">
+    <div class="" navbar-brand>Gringotts</div>
+  </div>
+</nav>
+<div class="columns">
+  <aside class="menu column is-2 is-fullheight">
+    <p class="menu-label">Vault</p>
+    <ul class="menu-list">
+      <li><a>Dashboard</a></li>
+      <li><a [routerLink]="['/transactions']">Transactions</a></li>
     </ul>
-  </nz-sider>
-  <nz-layout>
-    <nz-header>
-      <div class="app-header">
-        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
-            <span class="trigger"
-               nz-icon
-               [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-            ></span>
-        </span>
-      </div>
-    </nz-header>
-    <nz-content>
-      <div class="inner-content">
-        <router-outlet></router-outlet>
-      </div>
-    </nz-content>
-  </nz-layout>
-</nz-layout>
+  </aside>
+  <div class="column is-10 is-fullheight">
+    <router-outlet></router-outlet>
+  </div>
+</div>

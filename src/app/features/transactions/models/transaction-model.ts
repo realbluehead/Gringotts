@@ -6,6 +6,7 @@ export interface Transaction {
   quantity: number;
   assetCategoryId: number;
   totalPrice: number;
+  unitPrice?: number;
 }
 
 export enum TransactionType {
@@ -19,5 +20,5 @@ export interface AssetCategory {
   description: string;
   icon: string;
   parent?: number;
-  full_path?: string;
+  path?: string;
 }
