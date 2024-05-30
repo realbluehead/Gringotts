@@ -13,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let tx of txData">
+      <tr *ngFor="let tx of txData" (click)="editTransaction(tx)">
         <td>{{tx.date | date:'dd/MM/yyyy'}}</td>
         <td>Bought</td>
         <td>{{tx.quantity}}</td>
@@ -24,4 +24,67 @@
       </tr>
     </tbody>
   </table>
+</div>
+<div [ngClass]="{'is-active':showEdit}" class="modal">
+  <div class="modal-background" (click)="showEdit=false"></div>
+  <div class="modal-content" *ngIf="currentTx">
+    <div class="box">
+      <h1 class="title">Edit Transaction</h1>
+      <form>
+        <div class="field">
+          <label class="label">Date</label>
+          <div class="control">
+            <input class="input" type="text" />
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Type</label>
+          <div class="control">
+            <div class="select">
+              <select>
+                <option>Bought</option>
+                <option>Sold</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Quantity</label>
+          <div class="control">
+            <input class="input" type="number" />
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Category</label>
+          <div class="control">
+            <div class="select">
+              <select>
+                <option>Bought</option>
+                <option>Sold</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Total Price</label>
+          <div class="control">
+            <input class="input" type="number" />
+          </div>
+        </div>
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-link">Submit</button>
+          </div>
+          <div class="control">
+            <button class="button is-link is-light">Cancel</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <button
+    class="modal-close is-large"
+    aria-label="close"
+    (click)="showEdit=false"
+  ></button>
 </div>

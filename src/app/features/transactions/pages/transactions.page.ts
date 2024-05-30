@@ -20,6 +20,8 @@ import {
 export class TransactionsPage implements OnInit {
   txData: Transaction[] = [];
   assetCategoriesMap: any = {};
+  showEdit = false;
+  currentTx: Transaction | undefined;
 
   constructor(
     private assetCatService: AssetCategoryService,
@@ -33,6 +35,11 @@ export class TransactionsPage implements OnInit {
   }
 
   ngOnInit() {}
+
+  editTransaction(tx: Transaction) {
+    this.currentTx = tx;
+    this.showEdit = true;
+  }
 
   private mockData() {
     ASSET_CATEGORIES.forEach((cat: AssetCategory) =>
